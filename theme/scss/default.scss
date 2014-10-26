@@ -54,9 +54,23 @@
 ::-webkit-scrollbar-corner {
   background: transparent;
 }
-
+html {
+  background-color: #1275b2;
+  background-image: url("../../images/noise-low.png"), radial-gradient(hsl(203, 80%, 45%), hsl(203, 80%, 32%));
+  background-position: left top, 50% 50%;
+  background-repeat: repeat;
+  min-height: 100%;
+}
 body {
-  background: black;
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+  height: 100%
+  margin: 0;
+  width: 100%;
+  display: table-cell;
+  padding: 1em 0;
+  vertical-align: middle;
+  color: #333;
+  font: 81.3%/1.538em "Lucida Grande","Lucida Sans Unicode","DejaVu Sans","Lucida Sans",sans-serif;
 }
 
 slides > slide {
@@ -939,7 +953,7 @@ aside.gdbar {
       display: none !important;
     }
   }
-  
+
   slides {
     slide {
       &.backdrop {

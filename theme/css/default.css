@@ -16,14 +16,20 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font: inherit;
-  font-size: 100%;
   vertical-align: baseline;
+  font-size: 90.3%;
+  line-height: 1.538em;
+  font-family: "Lucida Grande","Lucida Sans Unicode","DejaVu Sans","Lucida Sans",sans-serif;
 }
 
 /* line 22, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
+  background-color: #1275b2;
+  background-image: url("../../images/noise-low.png"), radial-gradient(hsl(203, 80%, 45%), hsl(203, 80%, 32%));
+  background-position: left top, 50% 50%;
+  background-repeat: repeat;
+  min-height: 100%;
 }
 
 /* line 24, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
@@ -75,14 +81,11 @@ html {
 
 /* line 57, ../scss/_base.scss */
 body {
-  margin: 0;
-  padding: 0;
   opacity: 0;
   height: 100%;
   min-height: 740px;
   width: 100%;
   overflow: hidden;
-  color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
   -ms-font-smoothing: antialiased;
@@ -92,7 +95,16 @@ body {
   -moz-transition: opacity 800ms ease-in 100ms;
   -o-transition: opacity 800ms ease-in 100ms;
   transition: opacity 800ms ease-in 100ms;
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+  margin: 0;
+  display: table-cell;
+  padding: 1em 0;
+  vertical-align: middle;
+  color: #333;
+  line-height: 1.538em;
+  font-family: "Lucida Grande","Lucida Sans Unicode","DejaVu Sans","Lucida Sans",sans-serif;
 }
+
 /* line 73, ../scss/_base.scss */
 body.loaded {
   opacity: 1 !important;
@@ -234,21 +246,18 @@ slide.fill img {
 }
 
 /* line 58, ../scss/default.scss */
-body {
-  background: black;
-}
+
 
 /* line 62, ../scss/default.scss */
 slides > slide {
   display: none;
-  font-family: 'Open Sans', Arial, sans-serif;
   font-size: 26px;
   color: #797979;
   width: 900px;
   height: 700px;
   margin-left: -450px;
   margin-top: -350px;
-  padding: 40px 60px;
+  padding: 20px 0 40px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
@@ -258,6 +267,7 @@ slides > slide {
   -moz-transition: all 0.6s ease-in-out;
   -o-transition: all 0.6s ease-in-out;
   transition: all 0.6s ease-in-out;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 /* line 83, ../scss/default.scss */
 slides > slide.far-past {
@@ -305,7 +315,6 @@ slides > slide:not(.nobackground):before {
   position: absolute;
   bottom: 20px;
   left: 60px;
-  background: url(../../images/google_developers_icon_128.png) no-repeat 0 50%;
   -webkit-background-size: 30px 30px;
   -moz-background-size: 30px 30px;
   -o-background-size: 30px 30px;
@@ -376,8 +385,8 @@ slides.layout-faux-widescreen > slide {
 /* line 212, ../scss/default.scss */
 slides.layout-widescreen > slide,
 slides.layout-faux-widescreen > slide {
-  margin-left: -550px;
-  width: 1100px;
+  /*margin-left: -550px;
+  width: 1100px;*/
 }
 /* line 217, ../scss/default.scss */
 slides.layout-widescreen > slide.far-past,
@@ -1484,3 +1493,183 @@ aside.gdbar img {
     font-family: monospace !important;
   }
 }
+
+/* Drupal theming maintenance page */
+/**
+ * @file
+ * Maintenance theming.
+ */
+.maintenance-background {
+  background-color: #e0e0d8;
+  background-image: -webkit-radial-gradient(hsl(203, 2%, 90%), hsl(203, 2%, 95%));
+  background-image: radial-gradient(hsl(203, 2%, 90%), hsl(203, 2%, 95%));
+  background-repeat: repeat;
+  background-position: left top, 50% 50%;
+  min-height: 100%;
+}
+
+/* Maintenance theming */
+.install-page,
+.maintenance-page {
+  background: none;
+}
+.page-title {
+  font-size: 1.2em;
+  line-height: 1.2em;
+  color: #0074bd;
+  word-wrap: break-word;
+}
+
+/**
+ * Task list & step indicator
+ */
+@media all and (max-width: 48em) { /* 768px */
+  header[role="banner"] {
+    position: relative;
+  }
+  .step-indicator {
+    display: block;
+    font-size: 1.385em;
+    position: absolute;
+    top: 0.2em;
+    right: 0.5em; /* LTR */
+  }
+  [dir="rtl"] .step-indicator {
+    left: 0.5em;
+    right: auto;
+  }
+  .task-list {
+    display: none;
+  }
+}
+
+@media all and (min-width: 48em) { /* 768px */
+  .step-indicator {
+    display: none;
+  }
+  .task-list {
+    margin-left: 0; /* LTR */
+    list-style-type: none;
+    list-style-image: none;
+    padding-left: 0; /* LTR */
+    padding-bottom: 1em;
+  }
+  [dir="rtl"] .task-list {
+    margin-right: 0;
+    padding-right: 0;
+  }
+  .task-list li {
+    padding: 0.5em 1em 0.5em 3.3em; /* LTR */
+    color: #1a1a1a;
+  }
+  [dir="rtl"] .task-list li {
+    padding: 0.5em 3.85em 0.5em 1em;
+  }
+  .task-list .active {
+    background: #ebeae4;
+    position: relative;
+    font-weight: normal;
+  }
+  .task-list .active:after {
+    left: 100%; /* LTR */
+    border: solid transparent;
+    border-color: rgba(235, 234, 228, 0);
+    border-left-color: #ebeae4; /* LTR */
+    border-width: 1.35em;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    top: 50%;
+    margin-top: -1.32em;
+  }
+  [dir="rtl"] .task-list .active:after {
+    left: auto;
+    right: 100%;
+    border-left-color: transparent;
+    border-right-color: #ebeae4;
+  }
+  .task-list .done {
+    color: #adadad;
+  }
+}
+
+/**
+ * Layout
+ */
+.layout-container {
+  background: #fff;
+  width: auto;
+  margin-left: 1.25em;
+  margin-right: 1.25em;
+}
+.layout-container:after { /* no reason for a clearfix in the markup */
+  content: "";
+  display: table;
+  clear: both;
+}
+@media all and (max-width: 48em) { /* 768px */
+  .layout-container {
+    margin: 1.25em;
+    padding: 10px 20px;
+  }
+  .page-title {
+    margin-right: 2em; /* LTR */
+    margin-bottom: 0.725em;
+  }
+}
+
+@media all and (min-width: 48em) { /* 768px */
+  html {
+    display: table;
+  }
+  .install-page,
+  .maintenance-page {
+    display: table-cell;
+    padding: 1em 0;
+    vertical-align: middle;
+  }
+  html, .install-page, .maintenance-page {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .layout-container {
+    margin: 0 auto;
+    max-width: 770px;
+    width: 75%;
+    border-radius: 5px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    padding: 20px 0 40px 0;
+  }
+
+  /* Positioning sidebar & content */
+  main {
+    box-sizing: border-box;
+    clear: none;
+    float: left; /* LTR */
+    padding-left: 3.85em;
+    padding-right: 3.85em;
+    width: 65%;
+  }
+  ul {
+    padding: 15px;
+    margin: 0.25em 0;
+  }
+  .layout-sidebar-first {
+    float: left; /* LTR */
+    width: 35%;
+  }
+  [dir="rtl"] .layout-sidebar-first {
+    float: right;
+  }
+
+  /* Margins for sitename */
+  .page-title {
+    margin: 1em 1.9em 1.5em 1.9em;
+  }
+}
+
+
+

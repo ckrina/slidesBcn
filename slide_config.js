@@ -1,7 +1,7 @@
 var SLIDE_CONFIG = {
   // Slide settings
   settings: {
-    title: 'Title Goes Here<br>Up To Two Lines',
+    title: 'DrupalCon BCN 2015',
     subtitle: 'Subtitle Goes Here',
     //eventInfo: {
     //  title: 'Google I/O',
